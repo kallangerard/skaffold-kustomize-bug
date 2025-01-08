@@ -1,0 +1,17 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/GoogleContainerTools/skaffold/main/docs-v2/content/en/schemas/v4beta5.json
+apiVersion: skaffold/v4beta5
+kind: Config
+metadata:
+  name: helloworld
+
+profiles:
+  - name: no-components
+    manifests:
+      kustomize:
+        paths:
+          - manifests/helloworld/overlays/no-components
+  - name: with-components
+    manifests:
+      kustomize:
+        paths:
+          - manifests/helloworld/overlays/with-components
